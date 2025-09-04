@@ -1,7 +1,65 @@
-body {
-    background-color: beige;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
-h1 {
-    color: grey
+a{
+    text-decoration: none;
+}
+
+.navbar {
+    font-family: "Roboto Mono", monospace;
+    color: #323232;
+    padding: 20px 0px 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.items ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.items li {
+    list-style: none;
+    margin-right: 30px;
+}
+
+.items li a {
+    color: #323232;
+}
+
+.content-header {
+    padding-top: 30px;
+    background-color: #90CAF9;
+    display: flex;
+    align-items: center;
+}
+.text-content {
+    font-family: "Roboto Mono", monospace;
+    color: #ffffff;
+    margin-left: 30px;
+}
+.text-content h2{
+    font-size: 50px;
+}
+.text-content p{
+    font-size: 20px;
+    padding: 30px 30px 30px 0px;
+}
+.text-content button {
+    font-family: "Roboto Mono", monospace;
+    width: 170px;
+    height: 45px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+.text-content button a{
+    font-size: 50px;
+    color: #323232;
 }
