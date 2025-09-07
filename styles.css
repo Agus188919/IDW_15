@@ -176,7 +176,7 @@ a {
     width: 497 px;
     height: 88px;
     text-align: center;
-    padding-top: 30mm;
+    padding-top: 25mm;
 }
 
 .info{
@@ -187,7 +187,7 @@ a {
     width: 527px;
     height: 429px;
     position: absolute;
-    top: 300px;
+    top: 950px;
     left: 720px;
     opacity: 50%;
 
@@ -199,6 +199,6 @@ a {
     width: 602px;
     height: 429px;
     position: absolute;
-    top: 300px;
+    top: 900px;
     left: 55px;
 }
