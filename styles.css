@@ -165,3 +165,40 @@ a {
     width: 100%;
     height: 100%;
 }
+
+/****************CSS section******************************/
+
+.title{
+    font-family: "Roboto Mono", monospace;
+    font-size: 150%;
+    background-color: white;
+    color: black;
+    width: 497 px;
+    height: 88px;
+    text-align: center;
+    padding-top: 30mm;
+}
+
+.info{
+    font-family: "Roboto Mono", monospace;
+    font-size: 150%;
+    display: flex;
+    text-align: center;
+    width: 527px;
+    height: 429px;
+    position: absolute;
+    top: 300px;
+    left: 720px;
+    opacity: 50%;
+
+}
+
+.image{
+    display: flex;
+    text-align: left;
+    width: 602px;
+    height: 429px;
+    position: absolute;
+    top: 300px;
+    left: 55px;
+}
