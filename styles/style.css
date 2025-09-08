@@ -177,7 +177,7 @@ a {
     width: 497 px;
     height: 88px;
     text-align: center;
-    padding-top: 25mm;
+    padding-top: 30mm;
 }
 
 .info {
@@ -188,7 +188,7 @@ a {
     width: 527px;
     height: 429px;
     position: absolute;
-    top: 950px;
+    top: 300px;
     left: 720px;
     opacity: 50%;
 
@@ -200,11 +200,10 @@ a {
     width: 602px;
     height: 429px;
     position: absolute;
-    top: 900px;
+    top: 300px;
     left: 55px;
+
 }
-
-
 
 /* Estilos para la página de contacto */
 .contact-container {
