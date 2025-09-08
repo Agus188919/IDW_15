@@ -10,6 +10,7 @@ a {
 }
 
 .navbar {
+    background-color: #90CAF9;
     font-family: "Roboto Mono", monospace;
     color: #323232;
     padding: 20px 0px 20px 30px;
@@ -168,7 +169,7 @@ a {
 
 /****************CSS section******************************/
 
-.title{
+.title {
     font-family: "Roboto Mono", monospace;
     font-size: 150%;
     background-color: white;
@@ -179,7 +180,7 @@ a {
     padding-top: 25mm;
 }
 
-.info{
+.info {
     font-family: "Roboto Mono", monospace;
     font-size: 150%;
     display: flex;
@@ -193,7 +194,7 @@ a {
 
 }
 
-.image{
+.image {
     display: flex;
     text-align: left;
     width: 602px;
@@ -257,7 +258,9 @@ a {
     color: #666;
 }
 
-.whatsapp-btn, .email-btn, .instagram-btn {
+.whatsapp-btn,
+.email-btn,
+.instagram-btn {
     display: inline-block;
     margin-top: 15px;
     padding: 8px 15px;
@@ -300,7 +303,8 @@ a {
     margin-bottom: 20px;
 }
 
-.form-group input, .form-group textarea {
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
@@ -332,11 +336,11 @@ a {
     .contact-methods {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-title {
         font-size: 28px;
     }
-    
+
     .contact-subtitle {
         font-size: 16px;
     }

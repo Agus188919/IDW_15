@@ -1,6 +1,6 @@
 # IDW_15
 
-##Daiana Guerrero
-##Florencia Agustina Mammana
-##Facundo Orona
-##Agustín Ruiz
+Daiana Guerrero
+Florencia Agustina Mammana
+Facundo Orona
+Agustín Ruiz
