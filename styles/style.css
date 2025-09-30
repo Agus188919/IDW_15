@@ -484,8 +484,6 @@ a {
   body.noscroll { 
     overflow: hidden; 
   }
-}
-
 
   /* Header */
   .content-header {
@@ -617,3 +615,4 @@ a {
   .contact-form {
     padding: 20px;
   }
+}
