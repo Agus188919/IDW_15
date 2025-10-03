@@ -5,22 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Login</title>
 </head>
 
 <body>
-    <div class="container-login">
-        <div class="form">
-            <h1>Centro Médico</h1>
-            <p class="label">Ingrese su dni</p>
-            <input type="text" class="input-content">
-            <p class="label">Ingrese su contraseña</p>
-            <input type="password">
-            <a href="page-in-progress.html" class="forget-your-password">¿Olvidaste tu contraseña?</a>
-            <button type="submit"><a href="page-in-progress.html">Ingresar</a></button>
-            <p class="register"><a href="page-in-progress.html">Registrate</a></p>
+    <div class="container-fluid">
+        <div class="row full-height">
+            <div class="col-12 col-md-5 login-section bg-white">
+                <P class="mb-4 text-center h1">Centro Médico</P>
+                <form>
+                    <div class="mb-3 px-5">
+                        <label for="dni" class="form-label">Ingrese su DNI</label>
+                        <input type="text" class="form-control" id="dni" placeholder="DNI">
+                    </div>
+                    <div class="mb-3 px-5">
+                        <label for="password" class="form-label">Ingrese su contraseña</label>
+                        <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                        <div class="mt-2">
+                            <a href="#" class="small">¿Olvidaste tu contraseña?</a>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2 col-12 px-5">
+                        <button type="submit" class="btn btn-primary mb-3">Ingresar</button>
+                    </div>
+                    <div class="text-center">
+                        <a href="#">Regístrate</a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-md-7 p-0">
+                <div class="image-section"></div>
+            </div>
         </div>
-        <img src="img/login.avif" alt="Niño agarrando un osito" class="img-login">
     </div>
 </body>
 
