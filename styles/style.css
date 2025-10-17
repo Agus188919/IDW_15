@@ -418,6 +418,107 @@ body.dark-mode .contact-card,
   background-color: #64B5F6;
 }
 
+/******************** Estilos para la sección MÉDICOS ********************/
+.admin-medicos {
+  font-family: "Roboto Mono", monospace;
+  padding: 40px 20px;
+  color: #323232;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.form-medico {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.form-medico input {
+  flex: 1 1 30%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.form-medico button {
+  flex: 1 1 100%;
+  padding: 12px;
+  background-color: #90CAF9;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-medico button:hover {
+  background-color: #64B5F6;
+}
+
+.tabla-container {
+  overflow-x: auto;
+}
+
+#tabla-medicos {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#tabla-medicos th,
+#tabla-medicos td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#tabla-medicos th {
+  background-color: #90CAF9;
+  color: #323232;
+  font-weight: bold;
+}
+
+#tabla-medicos tr:hover {
+  background-color: #f1f1f1;
+}
+
+.btn-editar,
+.btn-eliminar {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-family: "Roboto Mono", monospace;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-editar {
+  background-color: #42A5F5;
+  color: white;
+}
+
+.btn-editar:hover {
+  background-color: #1E88E5;
+}
+
+.btn-eliminar {
+  background-color: #EF5350;
+  color: white;
+}
+
+.btn-eliminar:hover {
+  background-color: #D32F2F;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
 
