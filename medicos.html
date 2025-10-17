@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/style.css">
+  <script src="./js/medicos.js" defer></script>
+  <title>Administrar Médicos - Centro Médico</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="navbar">
+        <h2>
+          <a href="index.html">
+            <img src="./svg/cardiology_24dp_323232_FILL0_wght400_GRAD0_opsz24.svg" alt="icon cardiologico">
+            Centro Médico
+          </a>
+        </h2>
+        <div class="items" id="main-menu">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="page-in-progress.html">Buscá un Doctor</a></li>
+            <li><a href="medicos.html">Administrar Médicos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="admin-medicos">
+        <div class="title">
+          <h1>Gestión del Staff Médico</h1>
+        </div>
+
+        <form id="form-medico" class="form-medico">
+          <input type="text" id="nombre" placeholder="Nombre del médico" required>
+          <input type="text" id="especialidad" placeholder="Especialidad" required>
+          <input type="text" id="telefono" placeholder="Teléfono" required>
+          <button type="submit">Agregar Médico</button>
+        </form>
+
+        <div class="tabla-container">
+          <table id="tabla-medicos">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Especialidad</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-bottom">
+        <p>&copy; 2025 Centro Médico. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+
