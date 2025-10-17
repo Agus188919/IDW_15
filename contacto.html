@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./main.js" defer></script>
     <title>Contacto - Centro Médico</title>
 </head>
 
@@ -12,22 +13,38 @@
     <div class="container">
         <header>
             <div class="navbar">
-                <h2><img src="./svg/cardiology_24dp_323232_FILL0_wght400_GRAD0_opsz24.svg" alt="">Centro Medico</h2>
-                <div class="items">
+                <h2>
+                    <a href="index.html">
+                        <img src="./svg/cardiology_24dp_323232_FILL0_wght400_GRAD0_opsz24.svg" alt="icon cardiologico">
+                        Centro Médico
+                    </a>
+                </h2>
+                <button class="hamburger" aria-label="Abrir menú" aria-controls="main-menu" aria-expanded="false">
+                    <svg class="icon icon-menu" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                        <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                    <svg class="icon icon-close" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                        <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <div class="items" id="main-menu">
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
-                        <li><a href="">Busca un Doctor</a></li>
-                        <li><a href="">Perfil</a></li>
+                        <li><a href="page-in-progress.html">Buscá un Doctor</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
                         <li><a href="login.html" target="_blank">Ingreso</a></li>
                     </ul>
                 </div>
             </div>
         </header>
-        
+
         <div class="contact-container">
             <h2 class="contact-title">Contáctanos</h2>
             <p class="contact-subtitle">Estamos aquí para ayudarte. Elige el método que prefieras.</p>
-            
+
             <div class="contact-methods">
                 <div class="contact-card">
                     <div class="contact-icon">📞</div>
@@ -35,7 +52,7 @@
                     <p>+1 (555) 123-4567</p>
                     <p>Lunes a Viernes: 8:00 AM - 8:00 PM</p>
                 </div>
-                
+
                 <div class="contact-card">
                     <div class="contact-icon">💬</div>
                     <h3>WhatsApp</h3>
@@ -43,7 +60,7 @@
                     <p>Chateá con nosotros</p>
                     <a href="https://wa.me/15557654321" class="whatsapp-btn">Enviar mensaje</a>
                 </div>
-                
+
                 <div class="contact-card">
                     <div class="contact-icon">✉️</div>
                     <h3>Email</h3>
@@ -51,7 +68,7 @@
                     <p>Respondemos en 24 horas</p>
                     <a href="mailto:info@centromedico.com" class="email-btn">Enviar email</a>
                 </div>
-                
+
                 <div class="contact-card">
                     <div class="contact-icon">📱</div>
                     <h3>Instagram</h3>
@@ -60,7 +77,7 @@
                     <a href="https://instagram.com/centromedico" class="instagram-btn">Seguir</a>
                 </div>
             </div>
-            
+
             <div class="contact-form">
                 <h3>Envíanos un mensaje</h3>
                 <form>
@@ -80,6 +97,29 @@
                 </form>
             </div>
         </div>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <a href="index.html">
+                        <img src="./svg/cardiology_24dp_323232_FILL0_wght400_GRAD0_opsz24.svg" alt="icon cardiologico">
+                        Centro Médico
+                    </a>
+                    <p>Comprometidos con tu bienestar desde 1995.</p>
+                    <p>Dirección: Av. Siempre Viva 742, Buenos Aires</p>
+                    <p>Tel: +1 (555) 123-4567 </p>
+                </div>
+                <div class="footer-center">
+                    <h4>Enlaces útiles</h4>
+                    <ul>
+                        <li><a href="page-in-progress.html">Reservá tu turno</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Centro Medico. Todos los derechos reservados.</p>
+            </div>
+        </footer>
     </div>
 </body>
 
