@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row full-height">
+            <div class="col-12 col-md-5 login-section bg-white">
+                <P class="mb-4 text-center h1">Registro Profesional</P>
+                <form>
+                    <div class="mb-3 px-5">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" placeholder="Nombre" required>
+                    </div>
+                    <div class="mb-3 px-5">
+                        <label for="lastName" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Apellido" required>
+                    </div>
+                    <div class="mb-3 px-5">
+                        <label for="matricula" class="form-label">Matricula</label>
+                        <input type="text" class="form-control" id="matricula" placeholder="Matricula" required>
+                    </div>
+                    <div class="mb-3 px-5">
+                        <label for="obraSocial" class="form-label">Obra social</label>
+                        <select class="selectpicker w-100" multiple data-live-search="true"
+                            title="Elegir una o más opciones" required>
+                            <option value="1">Osde</option>
+                            <option value="2">Swiss Medical</option>
+                            <option value="3">Galeno</option>
+                            <option value="4">Medifé</option>
+                            <option value="5">Medicus</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 px-5">
+                        <label for="especialidad" class="form-label">Especialidad</label>
+                        <select class="form-select" id="inlineFormSelectPref" required>
+                            <option selected>Elegir una o más opciones</option>
+                            <option value="1">Pediatría</option>
+                            <option value="2">Clinica Medica</option>
+                            <option value="3">Obstetricia</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 px-5">
+                        <label for="valor" class="form-label">Valor por consulta</label>
+                        <input type="valor" class="form-control" placeholder="Valor" id="inputEmail"
+                            aria-describedby="Valor por consulta">
+                    </div>
+                    <div class="mb-3 px-5">
+                        <label for="validationTextarea" class="form-label">Información personal</label>
+                        <textarea class="form-control" id="validationTextarea"
+                            placeholder="Cuentanos algo sobre tu trayectoria" required></textarea>
+                        <div class="invalid-feedback">
+                            Please enter a message in the textarea.
+                        </div>
+                    </div>
+                    <div class="mb-3 px-5">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+                    </div>
+                    <div class="d-grid gap-2 col-12 px-5">
+                        <button type="submit" class="btn btn-primary mb-3">Crear Profesional</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-md-7 p-0">
+                <div class="image-section"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Inicializa el componente
+        $(document).ready(function () {
+            $('.selectpicker').selectpicker();
+        });
+    </script>
+</body>
+
+</html>
