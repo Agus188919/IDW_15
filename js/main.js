@@ -1,3 +1,12 @@
+import { AppManager } from './AppManager.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const app = new AppManager();
+  app.init();
+});
+
+/* REFACTORIZAR DARK
 const dark = document.getElementById("darkModeToggle");
 
 function closeMenu() {
@@ -19,4 +28,4 @@ dark.addEventListener("click", function () {
   } else {
     this.textContent = "🌙";
   }
-});
+});*/

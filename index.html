@@ -4,16 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script type="module" src="./js/main.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="./styles/style.css">
-    <script src="./js/main.js" defer></script>
     <title>Centro Médico</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg shadow-sm">
         <div class="container-fluid">
+            <button id="darkModeToggle" class="btn btn-outline-dark">🌙</button>
             <a class="navbar-brand fw-bold" href="./index.html">
                 <img src="./svg/cardiology_24dp_323232_FILL0_wght400_GRAD0_opsz24.svg" alt="icon cardiologico">
                 Centro Médico
@@ -21,13 +22,13 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <button id="darkModeToggle" class="btn btn-outline-dark">🌙</button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./src/medicos.html">Buscá un Doctor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./src/page-in-progress.html">Buscá un Doctor</a></li>
+                    <li class="nav-item"><a class="nav-link" target="_blank" href="./src/login-inicial.html">Ingreso</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="./src/contacto.html">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./src/login.html">Ingreso</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./src/administrador.html">Administrador</a></li>
                 </ul>
             </div>
         </div>
@@ -43,7 +44,7 @@
                             Un futuro más saludable empieza hoy: ¡Agendá tu cita!
                             Tu bienestar, nuestra experiencia: Agendá tu cita hoy.
                         </p>
-                        <a href="./src/login.html" class="btn btn-custom">Agenda tu cita</a>
+                        <a href="./src/login-inicial.html" class="btn btn-custom">Agendá tu cita</a>
                     </div>
                     <div class="col-md-6 text-center">
                         <img src="./img/portada.png" alt="Doctora">
@@ -52,7 +53,6 @@
             </div>
         </div>
     </section>
-
     <main>
         <div class="titleOriginal">
             <h1>Sobre Nosotros</h1>
@@ -73,110 +73,6 @@
         </section>
         <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <img src="./img/dr-1.jpg" class="card-img-top" alt="Imagen 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Dr. Roberto Pérez - Traumatología</h5>
-                                        <p class="card-text">El Dr. Roberto Pérez se especializa en la prevención,
-                                            diagnóstico y tratamiento de lesiones y enfermedades del sistema
-                                            musculoesquelético. Su trabajo abarca desde el cuidado de fracturas y
-                                            lesiones deportivas hasta la recuperación
-                                            funcional, con el objetivo de mejorar la movilidad y la calidad de vida
-                                            de sus pacientes.</p>
-                                        <a href="./src/page-in-progress.html" class="btn btn-primary">Ver más</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 d-none d-md-block">
-                                <div class="card">
-                                    <img src="./img/dr-2.jpg" class="card-img-top" alt="Imagen 2">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Dr. Pedro García - Medicina Clínica</h5>
-                                        <p class="card-text">El Dr. Pedro García brinda atención integral a pacientes
-                                            adultos, abordando tanto la prevención como el tratamiento de
-                                            enfermedades comunes y crónicas. Con una mirada amplia y cercana, acompaña a
-                                            cada persona en el cuidado de su salud
-                                            general, coordinando los estudios y derivaciones necesarias para un
-                                            seguimiento completo.</p>
-                                        <a href="./src/page-in-progress.html" class="btn btn-primary">Ver más</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 d-none d-md-block">
-                                <div class="card">
-                                    <img src="./img/dr-3.webp" class="card-img-top" alt="Imagen 3">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Dr. Juan Pablo Rodríguez - Neurocirugía</h5>
-                                        <p class="card-text">El Dr. Juan Pablo Rodríguez se dedica al diagnóstico y
-                                            tratamiento quirúrgico de enfermedades del sistema nervioso
-                                            central y periférico. Con un enfoque altamente especializado, atiende
-                                            patologías cerebrales, de columna y nervios,
-                                            priorizando siempre la precisión médica y el bienestar de sus <br>
-                                             pacientes.</p>
-                                        <a href="./src/page-in-progress.html" class="btn btn-primary">Ver más</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <img src="./img/dr-4.jpg" class="card-img-top" alt="Imagen 4">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Dra. Carla Sánchez - Pediatría</h5>
-                                        <p class="card-text">
-                                            La Dra. Carla Sánchez se especializa en el cuidado integral de niños y
-                                            adolescentes, acompañando cada etapa
-                                            de su crecimiento. Brinda atención preventiva, diagnóstica y de seguimiento,
-                                            con un enfoque cercano a las familias para
-                                            promover una infancia saludable y un desarrollo <br>
-                                            pleno.</p>
-                                        <a href="./src/page-in-progress.html" class="btn btn-primary">Ver más</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 d-none d-md-block">
-                                <div class="card">
-                                    <img src="./img/dr-5.webp" class="card-img-top" alt="Imagen 5">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Dra. Florencia Ramírez - Cardiología</h5>
-                                        <p class="card-text">La Dra. Florencia Ramírez está dedicada al diagnóstico,
-                                            tratamiento y prevención de enfermedades cardiovasculares. Su
-                                            labor se centra en acompañar a los pacientes en el cuidado de la salud del
-                                            corazón, ofreciendo un abordaje integral que
-                                            combina control clínico, prevención de riesgos y seguimiento personalizado.
-                                        </p>
-                                        <a href="./src/page-in-progress.html" class="btn btn-primary">Ver más</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 d-none d-md-block">
-                                <div class="card">
-                                    <img src="./img/dr-6.webp" class="card-img-top" alt="Imagen 6">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Dr. Adrián Franco - Ginecología</h5>
-                                        <p class="card-text">El Dr. Adrián Franco se especializa en la salud integral de
-                                            la mujer, brindando atención en prevención, diagnóstico y
-                                            tratamiento de distintas etapas y condiciones ginecológicas. Su enfoque
-                                            combina cercanía y profesionalismo, acompañando
-                                            a cada paciente con dedicación y cuidado <br>
-                                            personalizado.</p>
-                                        <a href="./src/page-in-progress.html" class="btn btn-primary">Ver más</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
             <button class="carousel-control-prev" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
@@ -213,7 +109,7 @@
             <div class="footer-center">
                 <h4>Enlaces útiles</h4>
                 <ul>
-                    <li><a href="./src/page-in-progress.html">Reservá tu turno</a></li>
+                    <li><a href="./src/login-inicial.html">Reservá tu turno</a></li>
                     <li><a href="./src/contacto.html">Contacto</a></li>
                 </ul>
             </div>
