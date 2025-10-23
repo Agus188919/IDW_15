@@ -72,6 +72,16 @@ a {
 }
 
 /********MODO OSCURO************/
+.btn.btn-circle {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
 
 body.dark-mode {
   background-color: #121212;
@@ -578,7 +588,7 @@ body.dark-mode .contact-card,
     height: 706px;
   }
 
-  .img-portada{
+  .img-portada {
     width: 95%;
   }
 

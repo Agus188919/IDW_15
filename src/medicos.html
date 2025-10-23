@@ -19,11 +19,9 @@
 <body>
   <nav class="navbar navbar-expand-lg shadow-sm">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="../index.html">
-        <button id="darkModeToggle" class="btn btn-outline-dark">🌙</button>
-        <img src="../svg/cardiology_24dp_323232_FILL0_wght400_GRAD0_opsz24.svg" alt="icon cardiologico">
-        Centro Médico
-      </a>
+      <button id="darkBtn" class="btn btn-outline-dark m-1 btn-circle">🌙</button>
+      <img src="../svg/cardiology_24dp_323232_FILL0_wght400_GRAD0_opsz24.svg" alt="icon cardiologico">
+      Centro Médico
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -40,7 +38,7 @@
       <div class="text-center mb-4">
         <h1 class="fw-bold">Gestión del Staff Médico</h1>
       </div>
-      <form id="form-medico" class="row g-3 p-4 bg-light rounded shadow-sm">
+      <form id="addProfesional" class="row g-3 p-4 bg-light rounded shadow-sm">
         <div class="col-md-4">
           <label for="matricula" class="form-label fw-bold">Matricula</label>
           <input type="number" id="matricula" class="form-control" placeholder="Matricula" required>

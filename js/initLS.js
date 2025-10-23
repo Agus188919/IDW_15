@@ -6,13 +6,13 @@ export function initializeLocalStorage() {
     const administradorIsPresent = localStorage.getItem("administradores");
 
 
-    if (!profesionalesIsPresent) {
+    if (!profesionalesIsPresent || profesionalesIsPresent == []) {
         localStorage.setItem("profesionales", JSON.stringify(PROFESIONALES));
     }
-    if (!pacientesIsPresent) {
+    if (!pacientesIsPresent || pacientesIsPresent == []) {
         localStorage.setItem("pacientes", JSON.stringify(PACIENTES));
     }
-    if (!administradorIsPresent) {
+    if (!administradorIsPresent || administradorIsPresent == []) {
         localStorage.setItem("administradores", JSON.stringify(ADMINISTRADORES));
     }
 }
