@@ -578,6 +578,10 @@ body.dark-mode .contact-card,
     height: 706px;
   }
 
+  .img-portada{
+    width: 95%;
+  }
+
   .content-header img {
     align-self: center;
     max-width: 100%;
