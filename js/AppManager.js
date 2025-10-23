@@ -196,10 +196,8 @@ export class AppManager {
     }
 
 
-    renderCarousel() {
-        if (!this.carouselInner) {
-            return;
-        }
+renderCarousel() {
+        if (!this.carouselInner) return;
 
         const profesionales = this.getStorageData(this.PROFESIONALES);
         this.carouselInner.innerHTML = '';
@@ -214,28 +212,28 @@ export class AppManager {
                 const fullName = `${prefix} ${profesional.nombreProfesional} ${profesional.apellidoProfesional}`;
 
                 return `
-                <div class="col-md-4 ${i > 0 ? 'd-none d-md-block' : ''}">
-                  <div class="card">
-                    <img src="${profesional.imagenProfesional}" class="card-img-top" alt="${fullName}">
-                    <div class="card-body">
-                      <h5 class="card-title">${fullName} - ${profesional.especialidadAlta}</h5>
-                      <p class="card-text">${profesional.infoProfesional}</p>
-                      <a href="./src/page-in-progress.html" class="btn btn-primary">Ver más</a>
-                    </div>
-                  </div>
-                </div>
-              `;
+  <div class="col-12 col-md-4 mb-4 d-flex">
+    <div class="card h-100 w-100">
+      <img src="${profesional.imagenProfesional}" class="card-img-top" alt="${fullName}">
+      <div class="card-body">
+        <h5 class="card-title title-clamp-2">${fullName} - ${profesional.especialidadAlta}</h5>
+        <p class="card-text clamp-3">${profesional.infoProfesional}</p>
+        <a href="./src/page-in-progress.html" class="btn btn-primary btn-card">Ver más</a>
+      </div>
+    </div>
+  </div>
+`;
             }).join('');
 
             this.carouselInner.innerHTML += `
-            <div class="carousel-item ${isActive}">
-              <div class="container">
-                <div class="row justify-content-center">
-                  ${cardsHTML}
-                </div>
-              </div>
-            </div>
-          `;
+      <div class="carousel-item ${isActive}">
+        <div class="container">
+          <div class="row justify-content-center">
+            ${cardsHTML}
+          </div>
+        </div>
+      </div>
+    `;
         }
     }
 
