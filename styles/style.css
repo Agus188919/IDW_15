@@ -639,6 +639,57 @@ body.dark-mode .contact-card,
     object-fit: cover;
   }
 
+    /* CARDS EN CARRUSEL */
+  #cardCarousel .card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+
+  #cardCarousel .card-title {
+    margin-bottom: .5rem;
+    line-height: 1.25;
+  }
+
+  #cardCarousel .card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  #cardCarousel .card-text {
+    flex-grow: 1;
+  }
+
+  #cardCarousel .btn-card {
+    margin-top: auto;
+  }
+
+  .title-clamp-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+
+    min-height: 3.2rem;
+  }
+
+  .clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    min-height: 4.5rem;
+  }
+
+  #cardCarousel .carousel-item .row {
+    align-items: stretch;
+  }
+
+  #cardCarousel .card {
+    height: 100%;
+  }
+
   /* OBRAS SOCIALES */
   .obras-sociales {
     padding: 40px 16px;
