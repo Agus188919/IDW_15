@@ -23,6 +23,7 @@ export class AppManager {
         this.tableAdministrador = document.querySelector("#tabla-medicos tbody");
         this.carouselInner = document.querySelector('.carousel-inner');
         this.dark = document.getElementById('darkBtn');
+        this.pacienteImagenBase64 = null;
     }
 
     init() {
@@ -42,6 +43,10 @@ export class AppManager {
         }
         if (this.formProfesional) {
             this.formProfesional.addEventListener('submit', this.registroProfesional.bind(this));
+            const inputImagen = document.getElementById('imagenPaciente');
+            if (inputImagen) {
+                inputImagen.addEventListener('change', this.setImgProfesional.bind(this));
+            }
         }
         if (this.logProfesional) {
             this.logProfesional.addEventListener('submit', this.validarProfesional.bind(this));
@@ -159,7 +164,7 @@ export class AppManager {
 
     actionForAdministrador(event) {
         const target = event.target;
-        const matricula = target.dataset.id;
+        const matricula = Number(target.dataset.id);
 
         if (!matricula) {
             return;
@@ -187,7 +192,7 @@ export class AppManager {
             valorConsulta: document.getElementById('valorConsulta').value,
             infoProfesional: document.getElementById('infoProfesional').value,
             passwordProfesional: document.getElementById('passwordProfesional')?.value,
-            imagenProfesional: document.getElementById('imagenProfesional')?.value
+            imagenProfesional: this.pacienteImagenBase64
         };
 
         const profesionales = this.getStorageData(this.PROFESIONALES);
@@ -259,7 +264,6 @@ export class AppManager {
               <td>${m.especialidadAlta}</td>
               <td>${m.valorConsulta}</td>
               <td>${m.infoProfesional}</td>
-              <td>${m.imagenProfesional}</td>
               <td>
                 <button class="btn-editar" data-id="${m.matricula}">Editar</button>
                 <button class="btn-eliminar" data-id="${m.matricula}">Eliminar</button>
@@ -327,5 +331,25 @@ export class AppManager {
         } else {
             this.dark.textContent = "🌙";
         }
+    }
+
+    setImgProfesional(event) {
+        const file = event.target.files[0];
+        if (!file) {
+            this.pacienteImagenBase64 = null;
+            return;
+        }
+
+        if (file.size > 2 * 1024 * 1024) {
+            alert("Error: La imagen es muy grande (máximo 2MB).");
+            event.target.value = null;
+            this.pacienteImagenBase64 = null;
+            return;
+        }
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            this.pacienteImagenBase64 = e.target.result;
+        };
+        reader.readAsDataURL(file);
     }
 }

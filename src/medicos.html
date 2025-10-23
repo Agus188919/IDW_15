@@ -75,8 +75,8 @@
           <input type="text" id="infoProfesional" class="form-control" placeholder="Información" required>
         </div>
         <div class="col-md-4">
-          <label for="imagenProfesional" class="form-label fw-bold">Imagen</label>
-          <input type="text" id="imagenProfesional" class="form-control" placeholder="Agrega tu imagen" required>
+          <label for="imagenPaciente" class="form-label">Imagen de Perfil (Máx 2MB)</label>
+          <input type="file" class="form-control" id="imagenPaciente" accept="image/png, image/jpeg">
         </div>
         <div class="col-12 text-end mt-3">
           <button id="addProfesionalBtn" type="submit" class="btn btn-primary px-4">Agregar Médico</button>
@@ -94,7 +94,6 @@
               <th>Especialidad</th>
               <th>Valor de consulta</th>
               <th>Información profesional</th>
-              <th>Imagen</th>
               <th class="text-center">Acciones</th>
             </tr>
           </thead>
