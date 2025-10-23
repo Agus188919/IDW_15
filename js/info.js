@@ -9,7 +9,7 @@ const PROFESIONALES = [
         valorConsulta: 25000,
         infoProfesional: `El Dr. Roberto Pérez se especializa en la prevención, diagnóstico y tratamiento
     de lesiones y enfermedades del sistema musculoesquelético.`,
-        passwordProfesional: 17899,
+        passwordProfesional: "17899",
         imagenProfesional: "./img/dr-1.jpg"
     },
     {
@@ -21,7 +21,7 @@ const PROFESIONALES = [
         valorConsulta: 25000,
         infoProfesional: `El Dr. Pedro García brinda atención integral a pacientes adultos,
     abordando la prevención y tratamiento de enfermedades comunes y crónicas.`,
-        passwordProfesional: 22345,
+        passwordProfesional: "22345",
         imagenProfesional: "./img/dr-2.jpg"
     },
     {
@@ -33,7 +33,7 @@ const PROFESIONALES = [
         valorConsulta: 25000,
         infoProfesional: `El Dr. Juan Pablo Rodríguez se dedica al diagnóstico y tratamiento quirúrgico
     de enfermedades del sistema nervioso central y periférico.`,
-        passwordProfesional: 30987,
+        passwordProfesional: "30987",
         imagenProfesional: "../img/dr-3.webp"
     },
     {
@@ -45,7 +45,7 @@ const PROFESIONALES = [
         valorConsulta: 25000,
         infoProfesional: `La Dra. Carla Sánchez se especializa en el cuidado integral de niños y adolescentes,
     acompañando cada etapa de su crecimiento.`,
-        passwordProfesional: 90273,
+        passwordProfesional: "90273",
         imagenProfesional: "./img/dr-4.jpg"
     },
     {
@@ -57,7 +57,7 @@ const PROFESIONALES = [
         valorConsulta: 25999,
         infoProfesional: `La Dra. Florencia Ramírez está dedicada al diagnóstico, tratamiento y prevención de
     enfermedades cardiovasculares.`,
-        passwordProfesional: 55643,
+        passwordProfesional: "55643",
         imagenProfesional: "./img/dr-5.webp"
     },
     {
@@ -69,7 +69,7 @@ const PROFESIONALES = [
         valorConsulta: 25000,
         infoProfesional: `El Dr. Adrián Franco se especializa en la salud integral de la mujer,
     brindando atención preventiva y diagnóstica.`,
-        passwordProfesional: 61235,
+        passwordProfesional: "61235",
         imagenProfesional: "./img/dr-6.webp"
     }
 ];

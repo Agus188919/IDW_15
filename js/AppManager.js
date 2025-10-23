@@ -19,10 +19,10 @@ export class AppManager {
         this.logPaciente = document.getElementById('log-paciente');
         this.logProfesional = document.getElementById('logProfesional');
         this.administrador = document.getElementById('administrador');
-        this.staffMedico = document.getElementById('form-medico');
         this.addProfesionalForm = document.getElementById('addProfesional');
         this.tableAdministrador = document.querySelector("#tabla-medicos tbody");
         this.carouselInner = document.querySelector('.carousel-inner');
+        this.dark = document.getElementById('darkBtn');
     }
 
     init() {
@@ -49,17 +49,17 @@ export class AppManager {
         if (this.administrador) {
             this.administrador.addEventListener('submit', this.validarAdministrador.bind(this));
         }
-        if (this.staffMedico) {
-            this.staffMedico.addEventListener('submit', this.addProfesionalForAdministrador.bind(this));
-        }
         if (this.addProfesionalForm) {
             this.addProfesionalForm.addEventListener('submit', this.addProfesionalForAdministrador.bind(this));
         }
         if (this.tableAdministrador) {
             this.tableAdministrador.addEventListener('click', this.actionForAdministrador.bind(this));
         }
-    }
+        if (this.dark) {
+            this.dark.addEventListener("click", this.setDarkModeToggle.bind(this));
+        }
 
+    }
 
     getStorageData(key) {
         return JSON.parse(localStorage.getItem(key)) || [];
@@ -75,7 +75,7 @@ export class AppManager {
         event.preventDefault();
 
         const newPaciente = {
-            dniPaciente: document.getElementById('dniPaciente').value,
+            dniPaciente: Number(document.getElementById('dniPaciente').value),
             nombrePaciente: document.getElementById('nombrePaciente').value,
             apellidoPaciente: document.getElementById('apellidoPaciente').value,
             os: document.getElementById('OS').value,
@@ -93,7 +93,7 @@ export class AppManager {
     iniciarSesionPaciente(event) {
         event.preventDefault();
 
-        const dniPaciente = document.getElementById('dniLog').value;
+        const dniPaciente = Number(document.getElementById('dniLog').value);
         const passwordPaciente = document.getElementById('passwordLog').value;
         const pacientes = this.getStorageData(this.PACIENTES);
 
@@ -117,7 +117,7 @@ export class AppManager {
     validarProfesional(event) {
         event.preventDefault();
 
-        const matriculaLogin = document.getElementById('matriculaLogin').value;
+        const matriculaLogin = Number(document.getElementById('matriculaLogin').value);
         const passwordProfesionalLogin = document.getElementById('passwordProfesionalLogin').value;
         const profesionales = this.getStorageData(this.PROFESIONALES);
 
@@ -179,7 +179,7 @@ export class AppManager {
         const selectElement = document.getElementById('osProfesional');
         const osValues = Array.from(selectElement.selectedOptions).map(option => option.value);
         const newProfesional = {
-            matricula: document.getElementById('matricula').value,
+            matricula: Number(document.getElementById('matricula').value),
             nombreProfesional: document.getElementById('nombreProfesional').value,
             apellidoProfesional: document.getElementById('apellidoProfesional').value,
             osProfesional: osValues,
@@ -274,19 +274,17 @@ export class AppManager {
             return;
         }
 
-        const matricula = Number(id);
         let profesionales = this.getStorageData(this.PROFESIONALES);
 
-        profesionales = profesionales.filter(p => p.matricula !== matricula);
+        profesionales = profesionales.filter(p => p.matricula !== id);
 
         this.setStorageData(this.PROFESIONALES, profesionales);
         this.renderAdministrador();
     }
 
     editarProfesional(id) {
-        const matricula = Number(id);
         const profesionales = this.getStorageData(this.PROFESIONALES);
-        const profesional = profesionales.find(p => p.matricula === matricula);
+        const profesional = profesionales.find(p => p.matricula === id);
 
         if (!profesional) {
             return;
@@ -321,10 +319,13 @@ export class AppManager {
 
         return names.join(', ');
     }
+
+    setDarkModeToggle() {
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+            this.dark.textContent = "☀️";
+        } else {
+            this.dark.textContent = "🌙";
+        }
+    }
 }
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const app = new AppManager();
-    app.init();
-});
