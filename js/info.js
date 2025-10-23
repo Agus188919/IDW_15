@@ -34,7 +34,7 @@ const PROFESIONALES = [
         infoProfesional: `El Dr. Juan Pablo Rodríguez se dedica al diagnóstico y tratamiento quirúrgico
     de enfermedades del sistema nervioso central y periférico.`,
         passwordProfesional: "30987",
-        imagenProfesional: "../img/dr-3.webp"
+        imagenProfesional: "./img/dr-3.webp"
     },
     {
         matricula: 90273,
