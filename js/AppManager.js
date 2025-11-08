@@ -6,6 +6,7 @@ const OS_MAP = {
     "3": "Galeno",
     "4": "Medifé",
     "5": "Medicus",
+    "6": "Particular"
 };
 export class AppManager {
 
@@ -97,16 +98,27 @@ export class AppManager {
         const passwordPaciente = document.getElementById('passwordLog').value;
         const pacientes = this.getStorageData(this.PACIENTES);
 
-        const found = pacientes.find(paciente =>
-            paciente.passwordPaciente === passwordPaciente && paciente.dniPaciente === dniPaciente
-        );
+       const found = pacientes.find(paciente =>
+        paciente.passwordPaciente === passwordPaciente && paciente.dniPaciente === dniPaciente
+    );
 
-        if (found) {
-            window.location.href = "../src/page-in-progress.html";
-        } else {
-            alert('VERIFICA LOS DATOS INGRESADOS');
-        }
+    if (found) {
+        // guardar paciente activo para usarlo al pedir turno
+        localStorage.setItem('pacienteActivo', JSON.stringify({
+            dniPaciente: found.dniPaciente,
+            nombrePaciente: found.nombrePaciente,
+            apellidoPaciente: found.apellidoPaciente,
+            os: found.os,
+            emailPaciente: found.emailPaciente
+        }));
+
+        
+        window.location.href = "../src/buscar-doctor.html";
+    } else {
+        alert('VERIFICA LOS DATOS INGRESADOS');
     }
+}
+
 
     registroProfesional(event) {
         event.preventDefault();

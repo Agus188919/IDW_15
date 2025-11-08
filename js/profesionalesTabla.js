@@ -1,39 +1,40 @@
 const STORAGE_KEY = 'profesionales';
 
 const OBRA_SOCIAL = {
-    "1": "Osde",
-    "2": "Swiss Medical",
-    "3": "Galeno",
-    "4": "Medifé",
-    "5": "Medicus",
+  "1": "Osde",
+  "2": "Swiss Medical",
+  "3": "Galeno",
+  "4": "Medifé",
+  "5": "Medicus",
+  "6": "Particular"
 };
 
 function parseOS(value) {
-    if (Array.isArray(value)) return value.map(Number).filter(Boolean);
-    if (typeof value === 'number') return [value];
-    if (typeof value === 'string') {
-        return value
-            .split(',')
-            .map(s => Number(s.trim()))
-            .filter(n => !Number.isNaN(n));
-    }
-    return [];
+  if (Array.isArray(value)) return value.map(Number).filter(Boolean);
+  if (typeof value === 'number') return [value];
+  if (typeof value === 'string') {
+    return value
+      .split(',')
+      .map(s => Number(s.trim()))
+      .filter(n => !Number.isNaN(n));
+  }
+  return [];
 }
 
 function formatOS(value) {
-    const ids = parseOS(value);
-    if (!ids.length) return '—';
-    return ids
-        .map(id => OBRA_SOCIAL[id] ?? `#${id}`)
-        .join(', ');
+  const ids = parseOS(value);
+  if (!ids.length) return '—';
+  return ids
+    .map(id => OBRA_SOCIAL[id] ?? `#${id}`)
+    .join(', ');
 }
 
 
 (function seedIfNeeded() {
-    const exists = localStorage.getItem(STORAGE_KEY);
-    if (!exists && typeof PROFESIONALES !== 'undefined') {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(PROFESIONALES));
-    }
+  const exists = localStorage.getItem(STORAGE_KEY);
+  if (!exists && typeof PROFESIONALES !== 'undefined') {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(PROFESIONALES));
+  }
 })();
 
 
@@ -41,12 +42,12 @@ const $tbody = document.getElementById('tabla-profesionales');
 const $search = document.getElementById('search-input');
 
 const currencyAR = (n) =>
-    Number(n).toLocaleString('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 });
+  Number(n).toLocaleString('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 });
 
 const getAll = () => JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
 
 function renderTable(rows) {
-    $tbody.innerHTML = rows.map(p => `
+  $tbody.innerHTML = rows.map(p => `
     <tr>
       <td><span class="badge text-bg-secondary">${p.matricula}</span></td>
       <td>${p.nombreProfesional} ${p.apellidoProfesional}</td>
@@ -67,12 +68,12 @@ renderTable(getAll());
 
 
 $search.addEventListener('input', () => {
-    const q = $search.value.trim().toLowerCase();
-    const filtered = getAll().filter(p => {
-        const texto = `${p.matricula} ${p.nombreProfesional} ${p.apellidoProfesional} ${p.especialidadAlta}`.toLowerCase();
-        return texto.includes(q);
-    });
-    renderTable(filtered);
+  const q = $search.value.trim().toLowerCase();
+  const filtered = getAll().filter(p => {
+    const texto = `${p.matricula} ${p.nombreProfesional} ${p.apellidoProfesional} ${p.especialidadAlta}`.toLowerCase();
+    return texto.includes(q);
+  });
+  renderTable(filtered);
 });
 
 
@@ -81,9 +82,9 @@ document.addEventListener('click', (e) => {
   if (!trigger) return;
 
   e.preventDefault();
-  
-  const idAttr = trigger.dataset.id;       
-  const idStr  = String(idAttr).trim();
+
+  const idAttr = trigger.dataset.id;
+  const idStr = String(idAttr).trim();
 
   const prof = getAll().find(p => String(p.matricula).trim() === idStr);
   if (!prof) {
@@ -92,7 +93,7 @@ document.addEventListener('click', (e) => {
   }
 
   const titulo = document.getElementById('modalVerTitulo');
-  const body   = document.getElementById('modalVerBody');
+  const body = document.getElementById('modalVerBody');
 
   titulo.textContent = `${prof.nombreProfesional} ${prof.apellidoProfesional} • ${prof.especialidadAlta}`;
   body.innerHTML = `
@@ -104,6 +105,32 @@ document.addEventListener('click', (e) => {
     <hr>
     <p class="mb-0">${prof.infoProfesional}</p>
   `;
+
+  const btnAgendar = document.getElementById('btnAgendarFooter');
+  if (btnAgendar) {
+    btnAgendar.onclick = (ev) => {
+      ev.preventDefault();
+
+    
+      localStorage.setItem('profesionalSeleccionado', JSON.stringify({
+        matricula: prof.matricula,
+        nombreProfesional: prof.nombreProfesional,
+        apellidoProfesional: prof.apellidoProfesional,
+        especialidadAlta: prof.especialidadAlta,
+        osProfesional: prof.osProfesional,
+        valorConsulta: prof.valorConsulta
+      }));
+
+
+      const pacienteActivo = JSON.parse(localStorage.getItem('pacienteActivo') || 'null');
+
+      if (!pacienteActivo) {
+        window.location.href = './login-inicial.html';
+      } else {
+        window.location.href = './turno.html';
+      }
+    };
+  }
 
   new bootstrap.Modal(document.getElementById('modalVerProfesional')).show();
 });
