@@ -72,6 +72,16 @@ a {
 }
 
 /********MODO OSCURO************/
+.btn.btn-circle {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
 
 body.dark-mode {
   background-color: #121212;
@@ -418,6 +428,107 @@ body.dark-mode .contact-card,
   background-color: #64B5F6;
 }
 
+/******************** Estilos para la sección MÉDICOS ********************/
+.admin-medicos {
+  font-family: "Roboto Mono", monospace;
+  padding: 40px 20px;
+  color: #323232;
+  margin: auto;
+}
+
+.form-medico {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.form-medico input {
+  flex: 1 1 30%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.form-medico button {
+  flex: 1 1 100%;
+  padding: 12px;
+  background-color: #90CAF9;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-medico button:hover {
+  background-color: #64B5F6;
+}
+
+.tabla-container {
+  overflow-x: auto;
+}
+
+#tabla-medicos {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#tabla-medicos th,
+#tabla-medicos td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#tabla-medicos th {
+  background-color: #90CAF9;
+  color: #323232;
+  font-weight: bold;
+}
+
+#tabla-medicos tr:hover {
+  background-color: #f1f1f1;
+}
+
+.btn-editar,
+.btn-eliminar {
+  width: 150px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-family: "Roboto Mono", monospace;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-editar {
+  background-color: #42A5F5;
+  color: white;
+}
+
+.btn-editar:hover {
+  background-color: #1E88E5;
+}
+
+.btn-eliminar {
+  background-color: #EF5350;
+  color: white;
+}
+
+.btn-eliminar:hover {
+  background-color: #D32F2F;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
 
@@ -477,6 +588,10 @@ body.dark-mode .contact-card,
     height: 706px;
   }
 
+  .img-portada {
+    width: 95%;
+  }
+
   .content-header img {
     align-self: center;
     max-width: 100%;
@@ -522,6 +637,57 @@ body.dark-mode .contact-card,
     width: 100%;
     border-radius: 10px;
     object-fit: cover;
+  }
+
+    /* CARDS EN CARRUSEL */
+  #cardCarousel .card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+
+  #cardCarousel .card-title {
+    margin-bottom: .5rem;
+    line-height: 1.25;
+  }
+
+  #cardCarousel .card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  #cardCarousel .card-text {
+    flex-grow: 1;
+  }
+
+  #cardCarousel .btn-card {
+    margin-top: auto;
+  }
+
+  .title-clamp-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+
+    min-height: 3.2rem;
+  }
+
+  .clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    min-height: 4.5rem;
+  }
+
+  #cardCarousel .carousel-item .row {
+    align-items: stretch;
+  }
+
+  #cardCarousel .card {
+    height: 100%;
   }
 
   /* OBRAS SOCIALES */
@@ -606,5 +772,219 @@ body.dark-mode .contact-card,
 
   .contact-form {
     padding: 20px;
+  }
+}
+
+
+
+/***********************Estilos para la gestión de los usuarios******************** */
+
+/* Avatar de usuario en la tabla */
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+  transition: transform 0.2s ease;
+}
+
+.user-avatar:hover {
+  transform: scale(1.1);
+  border-color: #0d6efd;
+}
+
+/* Badges personalizados para usuarios */
+.badge.fs-6 {
+  font-size: 1rem !important;
+  padding: 0.5rem 1rem;
+}
+
+/* Spinner de carga */
+#loadingSpinner {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Modal personalizado para usuarios */
+.modal-header.bg-primary {
+  background-color: #0d6efd !important;
+}
+
+.modal-body h6 {
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.modal-body p {
+  margin-bottom: 0.5rem;
+  color: #495057;
+}
+
+.modal-body img {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Paginación */
+.pagination {
+  margin-top: 2rem;
+}
+
+.page-link {
+  color: #0d6efd;
+  border-radius: 5px;
+  margin: 0 2px;
+  transition: all 0.2s ease;
+}
+
+.page-link:hover {
+  background-color: #0d6efd;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.page-item.active .page-link {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  font-weight: 600;
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Mensaje de error */
+#errorMessage {
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de carga de filas */
+#usuarios-tbody tr {
+  animation: fadeIn 0.3s ease;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para el input de búsqueda de usuarios */
+#searchInput {
+  border: 2px solid #dee2e6;
+  transition: all 0.2s ease;
+}
+
+#searchInput:focus {
+  border-color: #0d6efd;
+  transform: scale(1.02);
+}
+
+/* Mejora visual de los selectores de filtros */
+.form-select {
+  border: 2px solid #dee2e6;
+  transition: all 0.2s ease;
+}
+
+.form-select:focus {
+  transform: scale(1.02);
+}
+
+/* Botón limpiar filtros */
+#clearFilters {
+  transition: all 0.2s ease;
+}
+
+#clearFilters:hover {
+  background-color: #5c636a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+/* Modo oscuro para usuarios */
+body.dark-mode .user-avatar {
+  border-color: #495057;
+}
+
+body.dark-mode .user-avatar:hover {
+  border-color: #0d6efd;
+}
+
+body.dark-mode .modal-content {
+  background-color: #343a40;
+  color: #e0e0e0;
+}
+
+body.dark-mode .modal-body h6 {
+  color: #64B5F6;
+}
+
+body.dark-mode .modal-body p {
+  color: #cccccc;
+}
+
+body.dark-mode .page-link {
+  background-color: #343a40;
+  border-color: #495057;
+  color: #e0e0e0;
+}
+
+body.dark-mode .page-link:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+body.dark-mode .page-item.active .page-link {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* Responsive para tabla de usuarios en móviles */
+@media (max-width: 768px) {
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .badge.fs-6 {
+    font-size: 0.85rem !important;
+    padding: 0.35rem 0.65rem;
+  }
+
+  /* Ocultar columnas menos importantes en móviles */
+  #tabla-usuarios th:nth-child(5),
+  #tabla-usuarios td:nth-child(5),
+  #tabla-usuarios th:nth-child(7),
+  #tabla-usuarios td:nth-child(7) {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-body .row {
+    flex-direction: column;
+  }
+
+  .modal-body .col-md-4,
+  .modal-body .col-md-8 {
+    width: 100%;
+    max-width: 100%;
   }
 }
