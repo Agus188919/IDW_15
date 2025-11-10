@@ -4,36 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/darkModeCommand.js" defer></script>
     <link rel="stylesheet" href="./styles/style.css">
-    <script type="module" src="./js/main.js" defer></script>
+    <script type="module" src="./js/session.js" defer></script>
+    <script type="module" src="./js/index.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Centro Médico</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg shadow-sm">
+    <nav class="navbar navbar-expand-lg shadow-sm" style="background-color: var(--white);">
         <div class="container-fluid">
-            <button id="darkBtn" class="btn btn-outline-dark m-1 btn-circle">🌙</button>
-            <img src="./svg/cardiology_24dp_323232_FILL0_wght400_GRAD0_opsz24.svg" alt="icon cardiologico">
-            Centro Médico
+            <a class="navbar-brand" href="index.html" style="color: var(--primary-blue); font-weight: bold;">
+                <img src="./svg/cardiology_24dp_323232_FILL0_wght400_GRAD0_opsz24.svg" alt="icon cardiologico">
+                Centro Médico
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="./src/buscar-doctor.html">Buscá un Doctor</a></li>
-                    <li class="nav-item"><a class="nav-link" target="_blank" href="./src/login-inicial.html">Ingreso</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./src/buscar-doctor.html">Nuestros Profesionales</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="./src/contacto.html">Contacto</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./src/institucional.html">Institucional</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./src/contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-auth-item" target="_blank"
+                            href="./src/login-inicial.html">Ingreso</a>
+                    </li>
                 </ul>
+                <div class="d-flex align-items-center">
+                    <button id="darkBtn" class="btn btn-outline-dark m-1 btn-circle">🌙</button>
+
+                    <a id="admin-btn" href="./src/administrador.html" class="btn btn-outline-dark m-1 btn-circle">
+                        ⚙️
+                    </a>
+
+                    <button id="logout-btn" class="btn btn-outline-danger m-1 btn-circle d-none">
+                        🚪
+                    </button>
+                </div>
+
             </div>
-            <a href="./src/administrador.html">
-                <button class="btn btn-outline-dark m-1 btn-circle">⚙️</button>
-            </a>
         </div>
     </nav>
-
     <section class="bk">
         <div class="container-fluid ">
             <div class="card border-0 bg-transparent">
@@ -44,7 +64,7 @@
                             Un futuro más saludable empieza hoy: ¡Agendá tu cita!
                             Tu bienestar, nuestra experiencia: Agendá tu cita hoy.
                         </p>
-                        <a href="./src/login-inicial.html" class="btn btn-custom">Agendá tu cita</a>
+                        <a href="./src/login-pacientes.html" class="btn btn-custom js-agendar">Agendá tu cita</a>
                     </div>
                     <div class="col-md-6 text-center">
                         <img src="./img/portada.png" alt="Doctora" class="img-portada">
@@ -53,28 +73,93 @@
             </div>
         </div>
     </section>
-    <main>
-        <div class="titleOriginal">
-            <h1>Sobre Nosotros</h1>
-        </div>
-        <section class="about">
-            <div class="info">
-                <p>
-                    Somos un equipo médico comprometido con tu salud. Brindamos atención integral con
-                    profesionalismo,
-                    experiencia y calidez, facilitando un sistema ágil de turnos para que acceder a la consulta sea
-                    simple y rápido.
-                    Nuestra misión es acompañarte en cada etapa de tu cuidado, priorizando siempre tu bienestar.
-                </p>
+    <section id="sobre-nosotros" class="py-5" style="background-color: var(--light-blue-bg);">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="display-5 fw-bold mb-3">Sobre Nosotros</h2>
+                    <p class="lead">
+                        Somos un equipo médico comprometido con tu salud. Brindamos atención integral con
+                        profesionalismo, experiencia y calidez.
+                    </p>
+                    <p>
+                        Facilitamos un sistema ágil de turnos para que acceder a la consulta sea
+                        simple y rápido. Nuestra misión es acompañarte en cada etapa de tu cuidado,
+                        priorizando siempre tu bienestar.
+                    </p>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h4 style="color: var(--primary-blue);">Nuestra Misión</h4>
+                            <p>Brindar atención médica de la más alta calidad, centrada en el paciente y accesible para
+                                toda
+                                la comunidad.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 style="color: var(--primary-blue);">Nuestros Valores</h4>
+                            <ul>
+                                <li>Empatía y Calidez</li>
+                                <li>Excelencia Profesional</li>
+                                <li>Innovación Constante</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <img src="./img/seccion1.png" alt="foto institucional" class="img-fluid rounded shadow-sm">
+                </div>
             </div>
-            <figure class="image">
-                <img src="./img/seccion1.png" alt="foto institucional">
-            </figure>
-        </section>
-        <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
+        </div>
+    </section>
+    <section id="servicios" class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Nuestros Servicios</h2>
+            <p class="lead text-muted">Atención integral para toda la familia.</p>
+        </div>
+
+        <div class="row text-center g-4">
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 p-4">
+                    <div class="service-icon mb-3">🩺</div>
+                    <h4 class="fw-bold" style="color: var(--primary-blue);">Clínica Médica</h4>
+                    <p>Atención primaria, chequeos preventivos y seguimiento de enfermedades crónicas para adultos.</p>
+                </div>
             </div>
 
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 p-4">
+                    <div class="service-icon mb-3">❤️</div>
+                    <h4 class="fw-bold" style="color: var(--primary-blue);">Cardiología</h4>
+                    <p>Diagnóstico y tratamiento de enfermedades del corazón. Electrocardiogramas, ecocardiogramas y
+                        más.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 p-4">
+                    <div class="service-icon mb-3">👶</div>
+                    <h4 class="fw-bold" style="color: var(--primary-blue);">Pediatría</h4>
+                    <p>Cuidado integral de la salud de niños y adolescentes, acompañando cada etapa de su crecimiento.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold">Conoce a Nuestros Profesionales</h2>
+                    <p class="lead text-muted">Expertos comprometidos con tu salud.</p>
+                </div>
+            </div>
+            <div class="carousel-inner">
+            </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
             </button>
@@ -83,9 +168,11 @@
             </button>
         </div>
         <section class="obras-sociales">
-            <div class="titleOriginal">
-                <h2>Obras Sociales que Aceptamos</h2>
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Obras Sociales que Aceptamos</h2>
+                <p class="lead text-muted">Trabajamos con las principales coberturas del país.</p>
             </div>
+
             <div class="logos">
                 <img src="./img/osde-logo.png" alt="OSDE">
                 <img src="./img/swiss.png" alt="Swiss Medical">
@@ -109,7 +196,7 @@
             <div class="footer-center">
                 <h4>Enlaces útiles</h4>
                 <ul>
-                    <li><a href="./src/login-inicial.html">Reservá tu turno</a></li>
+                    <li><a href="./src/login-inicial.html" class="js-agendar">Reservá tu turno</a></li>
                     <li><a href="./src/contacto.html">Contacto</a></li>
                 </ul>
             </div>
