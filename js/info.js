@@ -6,10 +6,11 @@ const PROFESIONALES = [
         osProfesional: 1,
         especialidadAlta: "Traumatología",
         valorConsulta: 25000,
+        conchita: true,
         infoProfesional: `El Dr. Roberto Pérez se especializa en la prevención, diagnóstico y tratamiento
     de lesiones y enfermedades del sistema musculoesquelético.`,
         passwordProfesional: "17899",
-        imagenProfesional: "/img/dr-1.jpg"
+        imagenProfesional: "./img/dr-1.jpg"
     },
     {
         matricula: 22345,
@@ -21,7 +22,7 @@ const PROFESIONALES = [
         infoProfesional: `El Dr. Pedro García brinda atención integral a pacientes adultos,
     abordando la prevención y tratamiento de enfermedades comunes y crónicas.`,
         passwordProfesional: "22345",
-        imagenProfesional: "/img/dr-2.jpg"
+        imagenProfesional: "./img/dr-2.jpg"
     },
     {
         matricula: 30987,
@@ -33,7 +34,7 @@ const PROFESIONALES = [
         infoProfesional: `El Dr. Juan Pablo Rodríguez se dedica al diagnóstico y tratamiento quirúrgico
     de enfermedades del sistema nervioso central y periférico.`,
         passwordProfesional: "30987",
-        imagenProfesional: "/img/dr-3.webp"
+        imagenProfesional: "./img/dr-3.webp"
     },
     {
         matricula: 90273,
@@ -45,7 +46,7 @@ const PROFESIONALES = [
         infoProfesional: `La Dra. Carla Sánchez se especializa en el cuidado integral de niños y adolescentes,
     acompañando cada etapa de su crecimiento.`,
         passwordProfesional: "90273",
-        imagenProfesional: "/img/dr-4.jpg"
+        imagenProfesional: "./img/dr-4.jpg"
     },
     {
         matricula: 55643,
@@ -57,7 +58,7 @@ const PROFESIONALES = [
         infoProfesional: `La Dra. Florencia Ramírez está dedicada al diagnóstico, tratamiento y prevención de
     enfermedades cardiovasculares.`,
         passwordProfesional: "55643",
-        imagenProfesional: "/img/dr-5.webp"
+        imagenProfesional: "./img/dr-5.webp"
     },
     {
         matricula: 61235,
@@ -69,7 +70,7 @@ const PROFESIONALES = [
         infoProfesional: `El Dr. Adrián Franco se especializa en la salud integral de la mujer,
     brindando atención preventiva y diagnóstica.`,
         passwordProfesional: "61235",
-        imagenProfesional: "/img/dr-6.webp"
+        imagenProfesional: "./img/dr-6.webp"
     }
 ];
 
