@@ -1,4 +1,3 @@
-
 const PROFESIONALES = [
     {
         matricula: 17899,
@@ -7,6 +6,7 @@ const PROFESIONALES = [
         osProfesional: 1,
         especialidadAlta: "Traumatología",
         valorConsulta: 25000,
+        conchita: true,
         infoProfesional: `El Dr. Roberto Pérez se especializa en la prevención, diagnóstico y tratamiento
     de lesiones y enfermedades del sistema musculoesquelético.`,
         passwordProfesional: "17899",
@@ -74,33 +74,6 @@ const PROFESIONALES = [
     }
 ];
 
-
-const ADMINISTRADORES = [
-    {
-        userName: "Florencia",
-        password: "Mammana"
-    },
-    {
-        userName: "Facundo",
-        password: "Orona"
-    },
-    {
-        userName: "Agustin",
-        password: "Ruiz"
-    },
-    {
-        userName: "Daiana",
-        password: "Guerrero"
-    },
-    {
-        userName: "Ignacio",
-        password: "Novello"
-    },
-    {
-        userName: "Analia",
-        password: "Faure"
-    }
-];
 const PACIENTES = [
     {
         dniPaciente: 54769876,
@@ -117,6 +90,32 @@ const PACIENTES = [
         os: 5,
         emailPaciente: "juano@hotmail.com",
         passwordPaciente: "123"
+    },
+    {
+        dniPaciente: 123,
+        nombrePaciente: "Prueba",
+        apellidoPaciente: "Probando",
+        os: 5,
+        emailPaciente: "prueb@hotmail.com",
+        passwordPaciente: "123"
     }
 ];
-export { PROFESIONALES, PACIENTES, ADMINISTRADORES };
+
+const OBRAS_SOCIALES = [
+    { id: 1, nombre: "Osde", descripcion: "Cobertura nacional premium", porcentaje: 30 },
+    { id: 2, nombre: "Swiss Medical", descripcion: "Planes privados", porcentaje: 25 },
+    { id: 3, nombre: "Galeno", descripcion: "Cobertura integral", porcentaje: 20 },
+    { id: 4, nombre: "Medifé", descripcion: "Planes para familias", porcentaje: 15 },
+    { id: 5, nombre: "Medicus", descripcion: "Medicina prepaga", porcentaje: 10 }
+];
+
+const ESPECIALIDADES = [
+    { id: 1, nombre: "Traumatología" },
+    { id: 2, nombre: "Medicina Clínica" },
+    { id: 3, nombre: "Neurocirugía" },
+    { id: 4, nombre: "Pediatría" },
+    { id: 5, nombre: "Cardiología" },
+    { id: 6, nombre: "Ginecología" }
+];
+
+export { PROFESIONALES, PACIENTES, OBRAS_SOCIALES, ESPECIALIDADES };

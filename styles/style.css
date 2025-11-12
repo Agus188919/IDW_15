@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
+:root {
+  --azulPrincipal: #005A9C;
+  --azulSecundario: #4A90E2;
+  --azulOscuro: #1A3B5D;
+  --blancoPrincipal: #F0F7FF;
+  --blancoSecundario: #FFFFFF;
+  --textoColorPrincipal: #333;
+  --textColorSecundario: #555;
+  --fuentePrincipal: "Lato", sans-serif;
+  --fuenteSecundaria: "Roboto Mono", monospace;
+  --rojoPeligro: #D32F2F;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,12 +20,17 @@
 
 a {
   text-decoration: none;
-  color: #323232;
+  color: var(--azulPrincipal);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--azulOscuro);
 }
 
 /*****************CARDS****************/
 .bk {
-  background-color: #90CAF9;
+  background-color: var(--azulSecundario);
 }
 
 .card-img-top {
@@ -49,26 +67,28 @@ a {
 
 /***************NAVBAR**********************/
 .navbar {
-  background-color: #90CAF9;
-  font-family: "Roboto Mono", monospace;
-  color: #323232;
-  padding: 20px 0px 20px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: var(--blancoPrincipal);
+  font-family: var(--fuenteSecundaria);
+  color: var(--textoColorPrincipal);
+  padding: 10px 20px;
 }
 
 /**************PORTADA********************/
 
-.carrousel-Original img {
-  max-width: 100%;
-  height: auto;
+.btn-custom {
+  background-color: var(--blancoSecundario);
+  color: var(--azulPrincipal);
+  border: 1px solid var(--blancoSecundario);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
 }
 
-.btn-custom {
-  background-color: white;
-  border: 1px solid #ccc;
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+.btn-custom:hover {
+  background-color: var(--blancoPrincipal);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /********MODO OSCURO************/
@@ -173,12 +193,51 @@ body.dark-mode .contact-card,
   background-color: #343a40 !important;
 }
 
+#profesionales .table {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border: none;
+}
+
+#profesionales .table thead {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+#profesionales .table thead th {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  border-bottom: none;
+}
+
+#profesionales .table tbody tr {
+  font-family: var(--font-body);
+  color: var(--text-light);
+}
+
+#profesionales .table-striped>tbody>tr:nth-of-type(odd)>* {
+  --bs-table-accent-bg: var(--light-blue-bg);
+  color: var(--text-color);
+}
+
+#profesionales .btn-outline-primary {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  font-weight: bold;
+}
+
+#profesionales .btn-outline-primary:hover {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
 /****************CSS section******************************/
 
 .titleOriginal {
-  font-family: "Roboto Mono", monospace;
+  font-family: var(--fuenteSecundaria);
   font-size: 30px;
-  color: #323232;
+  color: var(--azulOscuro);
   text-align: center;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -195,9 +254,10 @@ body.dark-mode .contact-card,
 
 .about .info {
   flex: 0.9;
-  font-family: "Roboto Mono", monospace;
-  font-size: 20px;
-  line-height: 1.6;
+  font-family: var(--fuentePrincipal);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--textColorSecundario);
   text-align: left;
   margin: 0;
 }
@@ -244,12 +304,11 @@ body.dark-mode .contact-card,
   transform: scale(1.1);
 }
 
-/* Footer */
-
+/***********FOOTER**********/
 .footer {
-  background-color: #f5f5f5;
-  color: #323232;
-  font-family: "Roboto Mono", monospace;
+  background-color: var(--blancoPrincipal);
+  color: var(--textColorSecundario);
+  font-family: var(--fuentePrincipal);
   padding: 40px 20px 20px;
   margin-top: 60px;
 }
@@ -303,11 +362,24 @@ body.dark-mode .contact-card,
   padding-top: 15px;
 }
 
-/* Estilos para la página de contacto */
-.contact-container {
-  font-family: "Roboto Mono", monospace;
-  padding: 40px 30px;
-  color: #323232;
+/*************SERVICIOS************/
+.service-icon {
+  font-size: 4rem;
+  color: var(--azulSecundario);
+}
+
+#servicios .card {
+  border: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#servicios .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+#servicios .card h4 {
+  color: var(--azulPrincipal);
 }
 
 .contact-title {
@@ -328,14 +400,6 @@ body.dark-mode .contact-card,
   margin-bottom: 50px;
 }
 
-.contact-card {
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  padding: 25px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
 .contact-card:hover {
   transform: translateY(-5px);
 }
@@ -346,13 +410,15 @@ body.dark-mode .contact-card,
 }
 
 .contact-card h3 {
+  font-family: var(--fuenteSecundaria);
   margin-bottom: 15px;
-  color: #323232;
+  color: var(--azulOscuro);
 }
 
 .contact-card p {
+  font-family: var(--fuentePrincipal);
   margin-bottom: 8px;
-  color: #666;
+  color: var(--textColorSecundario);
 }
 
 .whatsapp-btn,
@@ -383,9 +449,9 @@ body.dark-mode .contact-card,
 }
 
 .contact-form {
-  background-color: #f5f5f5;
+  background-color: var(--blancoSecundario);
   border-radius: 10px;
-  padding: 30px;
+  padding: 20px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -428,105 +494,276 @@ body.dark-mode .contact-card,
   background-color: #64B5F6;
 }
 
-/******************** Estilos para la sección MÉDICOS ********************/
-.admin-medicos {
-  font-family: "Roboto Mono", monospace;
-  padding: 40px 20px;
-  color: #323232;
-  margin: auto;
-}
-
-.form-medico {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-bottom: 30px;
-  background-color: #f5f5f5;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.form-medico input {
-  flex: 1 1 30%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 15px;
-}
-
-.form-medico button {
-  flex: 1 1 100%;
-  padding: 12px;
-  background-color: #90CAF9;
-  border: none;
-  color: white;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.form-medico button:hover {
-  background-color: #64B5F6;
-}
-
-.tabla-container {
-  overflow-x: auto;
-}
-
-#tabla-medicos {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
+#profesionales .table {
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border: none;
 }
 
-#tabla-medicos th,
-#tabla-medicos td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+#profesionales .table thead {
+  background-color: var(--azulPrincipal);
+  color: var(--blancoSecundario);
 }
 
-#tabla-medicos th {
-  background-color: #90CAF9;
-  color: #323232;
+#profesionales .table thead th {
+  font-family: var(--fuenteSecundaria);
+  font-weight: 400;
+  border-bottom: none;
+}
+
+#profesionales .table tbody tr {
+  font-family: var(--fuentePrincipal);
+  color: var(--textColorSecundario);
+}
+
+#profesionales .table-striped>tbody>tr:nth-of-type(odd)>* {
+  --bs-table-accent-bg: var(--blancoPrincipal);
+  color: var(--textoColorPrincipal);
+}
+
+#profesionales .btn-outline-primary {
+  border-color: var(--azulPrincipal);
+  color: var(--azulPrincipal);
   font-weight: bold;
 }
 
-#tabla-medicos tr:hover {
-  background-color: #f1f1f1;
+#profesionales .btn-outline-primary:hover {
+  background-color: var(--azulPrincipal);
+  color: var(--blancoSecundario);
+}
+
+.contact-card .whatsapp-btn,
+.contact-card .email-btn,
+.contact-card .instagram-btn {
+  background: var(--azulPrincipal);
+  color: var(--blancoSecundario);
+}
+
+.contact-card .whatsapp-btn:hover,
+.contact-card .email-btn:hover,
+.contact-card .instagram-btn:hover {
+  background: var(--azulOscuro);
+}
+
+#tabla-medicos thead {
+  background-color: var(--azulPrincipal);
+  color: var(--blancoSecundario);
+  border-color: var(--azulPrincipal);
+}
+
+#tabla-medicos thead th {
+  font-family: var(--fuentePrincipal);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table.align-middle tbody td {
+  vertical-align: middle;
+}
+
+#tabla-medicos tbody {
+  font-family: var(--fuentePrincipal);
+  font-size: 0.95rem;
+  color: var(--textColorSecundario);
+}
+
+#tabla-medicos th:last-child,
+#tabla-medicos td:last-child {
+  text-align: center;
+}
+
+.btn-eliminar {
+  border-color: var(--rojoPeligro);
+  color: var(--rojoPeligro);
+}
+
+.btn-eliminar:hover {
+  background-color: var(--rojoPeligro);
+  color: var(--blancoSecundario);
 }
 
 .btn-editar,
 .btn-eliminar {
-  width: 150px;
-  padding: 6px 12px;
-  border: none;
+  width: 100px;
+  padding: 4px 12px;
+  border-width: 2px;
+  border-style: solid;
   border-radius: 6px;
-  font-family: "Roboto Mono", monospace;
+  font-family: var(--fuenteSecundaria);
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background-color 0.2s, color 0.2s;
+  margin: 2px;
+  background-color: transparent;
 }
 
+/* --- Botón Editar --- */
 .btn-editar {
-  background-color: #42A5F5;
-  color: white;
+  border-color: var(--azulSecundario);
+  color: var(--azulSecundario);
 }
 
 .btn-editar:hover {
-  background-color: #1E88E5;
+  background-color: var(--azulSecundario);
+  color: var(--blancoSecundario);
 }
 
-.btn-eliminar {
-  background-color: #EF5350;
-  color: white;
+/***CONTACTO**/
+.contact-container {
+  font-family: var(--fuentePrincipal);
+  padding: 40px 30px;
+  color: var(--textoColorPrincipal);
+  background-color: var(--blancoPrincipal);
 }
 
-.btn-eliminar:hover {
-  background-color: #D32F2F;
+.contact-title,
+.contact-subtitle {
+  display: none;
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.contact-card {
+  background-color: var(--blancoSecundario);
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-icon {
+  font-size: 3rem;
+  color: var(--azulSecundario);
+  margin-bottom: 15px;
+}
+
+.contact-card h3 {
+  font-family: var(--fuenteSecundaria);
+  margin-bottom: 15px;
+  color: var(--azulOscuro);
+}
+
+.contact-card p {
+  font-family: var(--fuentePrincipal);
+  margin-bottom: 8px;
+  color: var(--textColorSecundario);
+}
+
+.page-hero {
+  height: 40vh;
+  background-image: url('../img/portada.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-hero h1 {
+  font-family: var(--fuenteSecundaria);
+  color: var(--blancoSecundario);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.institucional-content h2 {
+  font-family: var(--fuenteSecundaria);
+  color: var(--azulOscuro);
+  font-size: 2.5rem;
+  border-bottom: 3px solid var(--azulPrincipal);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.institucional-content p,
+.institucional-content li {
+  font-family: var(--fuentePrincipal);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--textColorSecundario);
+}
+
+.institucional-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.institucional-content li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.institucional-content li::before {
+  content: '✓';
+  color: var(--azulPrincipal);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+#nav-auth-item {
+  background-color: var(--azulPrincipal);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: var(--blancoSecundario);
+  transition: all 0.3s ease;
+}
+
+#nav-auth-item:hover {
+  background-color: var(--azulOscuro);
+  color: var(--blancoSecundario);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic-lg {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 4px solid var(--blancoSecundario);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes flash-green {
+  0% {
+    background-color: #c8e6c9;
+  }
+
+  100% {
+    background-color: inherit;
+  }
+}
+
+.fila-guardada>td {
+  animation: flash-green 1.2s ease-out;
 }
 
 /* Responsive */
@@ -639,7 +876,7 @@ body.dark-mode .contact-card,
     object-fit: cover;
   }
 
-    /* CARDS EN CARRUSEL */
+  /* CARDS EN CARRUSEL */
   #cardCarousel .card-body {
     display: flex;
     flex-direction: column;
@@ -669,6 +906,7 @@ body.dark-mode .contact-card,
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     overflow: hidden;
 
     min-height: 3.2rem;
@@ -678,6 +916,7 @@ body.dark-mode .contact-card,
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     overflow: hidden;
     min-height: 4.5rem;
   }
@@ -710,11 +949,7 @@ body.dark-mode .contact-card,
     object-fit: contain;
   }
 
-  /* FOOTER */
-  .footer {
-    margin-top: 40px;
-    padding: 28px 16px 16px;
-  }
+
 
   .footer-container {
     flex-direction: column;
@@ -742,35 +977,10 @@ body.dark-mode .contact-card,
     font-size: 12px;
   }
 
-  /* CONTACTO */
-  .contact-container {
-    padding: 32px 16px;
-  }
-
-  .contact-title {
-    font-size: 26px;
-  }
-
-  .contact-subtitle {
-    font-size: 14px;
-    margin-bottom: 24px;
-  }
-
-  .contact-methods {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-bottom: 32px;
-  }
-
-  .contact-card {
-    padding: 18px;
-  }
 
   .contact-icon {
     font-size: 32px;
   }
 
-  .contact-form {
-    padding: 20px;
-  }
+
 }
