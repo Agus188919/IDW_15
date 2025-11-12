@@ -22,11 +22,12 @@ async function validarAdministrador(event) {
             throw new Error(errorData.message || 'Credenciales inválidas');
         }
         const data = await response.json();
-        sessionStorage.setItem('accessToken', data.token);
-        window.location.href = "../src/administrador-dashboard.html";
-
+        sessionStorage.setItem('accessToken', data.accessToken);
     } catch (error) {
         alert(`NO TIENES PERMISO DE INGRESO: ${error.message}`);
+    }
+    finally {
+        window.location.href = "../src/administrador-dashboard.html";
     }
 }
 
