@@ -1,6 +1,6 @@
 # IDW_15 - Proyecto Centro Médico
 
-Proyecto de la cátedra IDW que simula la aplicación web de un Centro Médico. La app está desarrollada puramente en front-end (HTML, CSS, Bootstrap y JavaScript) y gestiona todos los datos (pacientes, profesionales y administradores) a través de `localStorage`.
+Proyecto de la cátedra IDW que simula la aplicación web de un Centro Médico. La app está desarrollada puramente en front-end (HTML, CSS, Bootstrap y JavaScript) y gestiona todos los datos (pacientes, profesionales y administradores) a través de `localStorage` y `sessionStorage`.
 
 ## 🚀 Integrantes
 
@@ -42,11 +42,8 @@ Los datos iniciales se cargan desde el archivo `/js/info.js` en `localStorage` l
 
 ### Administradores
 
-* **Usuario:** `Ignacio`
-* **Contraseña:** `Novello`
-
-* **Usuario:** `Analia`
-* **Contraseña:** `Faure`
+* **Usuario:** `Emilys`
+* **Contraseña:** `emilyspass`
 
 ### Profesional 
 
