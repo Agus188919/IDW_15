@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi perfil</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script type="module" src="../js/session.js" defer></script>
+    <script type="module" src="../js/mi-perfil.js" defer></script>
+    <script type="module" src="../js/darkModeCommand.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg shadow-sm" style="background-color: var(--white);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html" style="color: var(--primary-blue); font-weight: bold;">
+                <img src="../svg/cardiology_24dp_323232_FILL0_wght400_GRAD0_opsz24.svg" alt="icon cardiologico">
+                Centro Médico
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./buscar-doctor.html">Nuestros Profesionales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./institucional.html">Institucional</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-auth-item" target="_blank" href="./login-inicial.html">Ingreso</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button id="darkBtn" class="btn btn-outline-dark m-1 btn-circle">🌙</button>
+                    <a id="admin-btn" href="./administrador.html" class="btn btn-outline-dark m-1 btn-circle">
+                        ⚙️
+                    </a>
+                    <button id="logout-btn" class="btn btn-outline-danger m-1 btn-circle d-none">
+                        🚪
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="container py-4">
+        <div class="text-center mb-4">
+            <h2 class="display-5 fw-bold">Mi Perfil</h2>
+            <p class="lead text-muted">Gestioná tus datos y turnos desde un solo lugar.</p>
+        </div>
+        <ul class="nav nav-tabs nav-fill mb-3" id="perfilTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="datos-tab" data-bs-toggle="tab" data-bs-target="#datos-panel"
+                    type="button" role="tab">Mis Datos</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="turnos-tab" data-bs-toggle="tab" data-bs-target="#turnos-panel"
+                    type="button" role="tab">Mis Turnos</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pedir-tab" data-bs-toggle="tab" data-bs-target="#pedir-panel" type="button"
+                    role="tab">Pedir Turno Nuevo</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="perfilTabContent">
+            <div class="tab-pane fade show active" id="datos-panel" role="tabpanel">
+                <section id="datos-paciente" class="card p-4 shadow-sm">
+                    <h2 class="h5 mb-3">Mis datos personales</h2>
+                    <form id="form-perfil" class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" id="perfil-nombre" class="form-control" disabled>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">DNI</label>
+                            <input type="text" id="perfil-dni" class="form-control" disabled>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Obra social</label>
+                            <input type="text" id="perfil-os" class="form-control" disabled>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Email</label>
+                            <input type="email" id="perfil-email" class="form-control" disabled>
+                        </div>
+                        <div class="col-12 d-flex gap-2 mt-3">
+                            <button type="button" id="btn-editar-perfil" class="btn btn-outline-primary">Editar</button>
+                            <button type="submit" id="btn-guardar-perfil" class="btn btn-primary"
+                                disabled>Guardar</button>
+                            <button type="button" id="btn-cancelar-perfil" class="btn btn-link d-none">Cancelar</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+            <div class="tab-pane fade" id="turnos-panel" role="tabpanel">
+                <section id="mis-turnos" class="card p-4 shadow-sm">
+                    <h2 class="h5 mb-3">Mis Próximos Turnos</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped align-middle">
+                            <thead style="background-color: var(--azulPrincipal); color: var(--blancoSecundario);">
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Profesional</th>
+                                    <th>Estado</th>
+                                    <th>Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-turnos"></tbody>
+                        </table>
+                        <p id="sin-turnos" class="text-muted text-center d-none">
+                            Todavía no tenés turnos reservados.
+                        </p>
+                    </div>
+                </section>
+            </div>
+            <div class="tab-pane fade" id="pedir-panel" role="tabpanel">
+                <section id="pedir-turno-nuevo" class="card p-4 shadow-sm">
+                    <h2 class="h5 mb-3">Agendar un nuevo turno</h2>
+                    <form id="form-turno" class="row g-3">
+                        <div class="col-md-6">
+                            <label for="select-profesional" class="form-label">1. Seleccioná un profesional</label>
+                            <select id="select-profesional" class="form-select" required>
+                                <option value="" selected disabled>Elegir...</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="fechaTurno" class="form-label">2. Seleccioná una fecha</label>
+                                <input type="date" id="fechaTurno" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="horaTurno" class="form-label">3. Seleccioná una hora</label>
+                                <select id="horaTurno" class="form-select" required>
+                                    <option value="" selected disabled>Elegir horario...</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 text-end">
+                            <button type="submit" class="btn btn-primary btn-lg">Confirmar turno</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

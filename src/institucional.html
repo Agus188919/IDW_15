@@ -4,24 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institucional - Centro Médico</title>
     <link rel="stylesheet" href="../styles/style.css">
     <script type="module" src="../js/session.js" defer></script>
     <script src="../js/darkModeCommand.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Contacto - Centro Médico</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg shadow-sm">
+
+    <nav class="navbar navbar-expand-lg shadow-sm" style="background-color: var(--white);">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html" style="color: var(--primary-blue); font-weight: bold;">
                 <img src="../svg/cardiology_24dp_323232_FILL0_wght400_GRAD0_opsz24.svg" alt="icon cardiologico">
                 Centro Médico
             </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
 
                 <ul class="navbar-nav mx-auto">
@@ -52,55 +55,73 @@
         </div>
     </nav>
 
-    <div class="contact-container">
-        <div class="container text-center mt-5 mb-5">
-            <h2 class="display-5 fw-bold">Contáctanos</h2>
-            <p class="lead text-muted">Estamos aquí para ayudarte. Elige el método que prefieras.</p>
-        </div>
-        <div class="contact-methods">
-            <div class="contact-card">
-                <div class="contact-icon">📞</div>
-                <h3>Teléfono</h3>
-                <p>+1 (555) 123-4567</p>
-                <p>Lunes a Viernes: 8:00 AM - 8:00 PM</p>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">💬</div>
-                <h3>WhatsApp</h3>
-                <p>+1 (555) 765-4321</p>
-                <p>Chateá con nosotros</p>
-                <a href="https://wa.me/15557654321" class="whatsapp-btn">Enviar mensaje</a>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">✉️</div>
-                <h3>Email</h3>
-                <p>info@centromedico.com</p>
-                <p>Respondemos en 24 horas</p>
-                <a href="mailto:info@centromedico.com" class="email-btn">Enviar email</a>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">📱</div>
-                <h3>Instagram</h3>
-                <p>@centromedico</p>
-                <p>Seguinos para consejos de salud</p>
-                <a href="https://instagram.com/centromedico" class="instagram-btn">Seguir</a>
+    <header class="page-hero">
+        <div class="page-hero-overlay">
+            <div class="container text-center">
+                <h1 class="display-4 fw-bold">Nuestra Institución</h1>
             </div>
         </div>
-        <div class="container mb-5">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Nuestra Ubicación</h2>
-                <p class="lead text-muted">Nos encontrarás en Av. Siempre Viva 742.</p>
+    </header>
+
+    <main class="container py-5">
+        <div class="row">
+
+            <div class="col-lg-8 institucional-content">
+                <section id="historia" class="mb-5">
+                    <h2>Reseña Histórica</h2>
+                    <p>
+                        Fundado en 1995, el Centro Médico nació con la vocación de brindar atención de salud integral
+                        y de la más alta calidad a la comunidad. Lo que comenzó como un pequeño consultorio
+                        con un puñado de especialistas, ha crecido hasta convertirse en una institución de referencia.
+                    </p>
+                    <p>
+                        A lo largo de más de 25 años, hemos incorporado tecnología de vanguardia y expandido
+                        nuestras instalaciones, pero siempre manteniendo el pilar fundamental de nuestra fundación:
+                        un trato humano, cálido y personalizado para cada paciente.
+                    </p>
+                </section>
+
+                <section id="mision" class="mb-5">
+                    <h2>Misión</h2>
+                    <p>
+                        Brindar atención médica de excelencia, centrada en el paciente y su familia,
+                        combinando la calidez humana con la más alta capacidad profesional y tecnológica.
+                    </p>
+                </section>
+
+                <section id="vision" class="mb-5">
+                    <h2>Visión</h2>
+                    <p>
+                        Ser la institución de salud líder en la región, reconocida por nuestra innovación,
+                        la calidad de nuestro staff médico y nuestro compromiso inquebrantable con el
+                        bienestar de la comunidad.
+                    </p>
+                </section>
+
+                <section id="valores" class="mb-5">
+                    <h2>Valores</h2>
+                    <ul>
+                        <li><strong>Excelencia:</strong> Búsqueda continua de la máxima calidad en cada uno de nuestros
+                            procesos.</li>
+                        <li><strong>Empatía:</strong> Ponerse en el lugar del paciente como eje central de nuestra
+                            atención.</li>
+                        <li><strong>Integridad:</strong> Actuar con transparencia, honestidad y ética profesional.</li>
+                        <li><strong>Innovación:</strong> Adoptar nuevas tecnologías y conocimientos para mejorar el
+                            diagnóstico y tratamiento.</li>
+                        <li><strong>Compromiso:</strong> Con la salud de nuestros pacientes y el desarrollo de nuestra
+                            comunidad.</li>
+                    </ul>
+                </section>
             </div>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3745.6749901099975!2d-99.7976344!3d20.147602400000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d3ad3c5a1c8b6f%3A0xf713d87af158e264!2savenida%20siempre%20viva%20123!5e0!3m2!1ses-419!2sar!4v1762491260465!5m2!1ses-419!2sar"
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </iframe>
+
+            <div class="col-lg-4">
+                <img src="../img/seccion1.png" alt="Instalaciones del Centro Médico"
+                    class="img-fluid rounded shadow-sm sticky-top" style="top: 20px;">
+            </div>
+
         </div>
-    </div>
+    </main>
+
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-left">
@@ -110,7 +131,7 @@
                 </a>
                 <p>Comprometidos con tu bienestar desde 1995.</p>
                 <p>Dirección: Av. Siempre Viva 742, Buenos Aires</p>
-                <p>Tel: +1 (555) 123-4567 </p>
+                <p>Tel: +1 (555) 123-4567</p>
             </div>
             <div class="footer-center">
                 <h4>Enlaces útiles</h4>
@@ -124,6 +145,7 @@
             <p>&copy; 2025 Centro Medico. Todos los derechos reservados.</p>
         </div>
     </footer>
+
 </body>
 
 </html>
