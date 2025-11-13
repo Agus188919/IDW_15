@@ -1,4 +1,4 @@
-const PACIENTES = localStorage.getItem("pacientes");
+const PACIENTES = "pacientes";
 /**
  * RECUPERAMOS LA INFORMACION DE LOS PACIONES DEL
  * LOCALSTORAGE
