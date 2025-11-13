@@ -7,23 +7,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const pacienteActivo = JSON.parse(localStorage.getItem('pacienteActivo') || 'null');
+    const profesionalActivo = JSON.parse(localStorage.getItem('profesionalActivo') || 'null');
     const adminToken = sessionStorage.getItem('accessToken');
     let rootPath = '.';
     if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
         rootPath = './src';
     }
-    if (pacienteActivo) {
+    if (adminToken) {
+        authLink.textContent = 'Panel Admin';
+        authLink.href = `${rootPath}/administrador-dashboard.html`;
+        authLink.removeAttribute('target');
+        logoutBtn.classList.remove('d-none');
+    } else if (profesionalActivo) {
+        authLink.textContent = `Hola, Dr. ${profesionalActivo.nombreProfesional}`;
+        authLink.href = `${rootPath}/medico-perfil.html`;
+        authLink.removeAttribute('target');
+        logoutBtn.classList.remove('d-none');
+    } else if (pacienteActivo) {
         authLink.textContent = `Hola, ${pacienteActivo.nombrePaciente}`;
         authLink.href = `${rootPath}/mi-perfil.html`;
         authLink.removeAttribute('target');
         logoutBtn.classList.remove('d-none');
-
-    } else if (adminToken) {
-        authLink.textContent = 'Panel Admin';
-        authLink.href = `${rootPath}/admin-dashboard.html`;
-        authLink.removeAttribute('target');
-        logoutBtn.classList.remove('d-none');
-
     } else {
         authLink.textContent = 'Ingreso';
         authLink.href = `${rootPath}/login-inicial.html`;
@@ -37,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         localStorage.removeItem('pacienteActivo');
+        localStorage.removeItem('profesionalActivo');
         sessionStorage.removeItem('accessToken');
         const homePath = (rootPath === './src') ? 'index.html' : '../index.html';
         window.location.href = homePath;

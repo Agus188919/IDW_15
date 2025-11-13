@@ -8,7 +8,7 @@ const OBRA_SOCIAL = {
 };
 
 /**
- * PARSEO DE 
+ * PARSEO DE OS
  * @param {*} value 
  * @returns 
  */

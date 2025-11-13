@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="../styles/style.css">
   <script src="../js/saveAuth.js" defer></script>
-  <script type="module" src="./js/session.js" defer></script>
+  <script type="module" src="../js/session.js" defer></script>
   <script type="module" src="../js/adminLogic.js" defer></script>
   <script src="../js/darkModeCommand.js" defer></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +20,7 @@
 
 </head>
 
-<body style="background-color: var(--blancoPrincipal);">
+<body>
   <nav class="navbar navbar-expand-lg shadow-sm" style="background-color: var(--white);">
     <div class="container-fluid">
       <a class="navbar-brand" href="../index.html" style="color: var(--primary-blue); font-weight: bold;">
@@ -150,6 +150,7 @@
           <table id="tabla-medicos" class="table table-striped table-hover align-middle mb-0">
             <thead>
               <tr>
+                <th style="width: 50px;">Foto</th>
                 <th>Matricula</th>
                 <th>Nombre</th>
                 <th>Apellido</th>

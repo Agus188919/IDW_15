@@ -111,6 +111,9 @@ export class AdministradorDashboard {
             const fila = document.createElement("tr");
             const osNombres = this.getOsName(m.osProfesional);
             fila.innerHTML = `
+                <td>
+                    <img src="${m.imagenProfesional}" class="admin-table-avatar" alt="Foto">
+                </td>
                 <td>${m.matricula}</td>
                 <td>${m.nombreProfesional}</td>
                 <td>${m.apellidoProfesional}</td>

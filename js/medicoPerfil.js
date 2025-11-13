@@ -71,7 +71,7 @@ function renderPerfil() {
         inputImagen.src = profesional.imagenProfesional;
     } else {
         //IMAGEN GENERICA SI NO TENEMOS IMAGEN ASIGNADA
-        inputImagen.src = "https://via.placeholder.com/150";
+        inputImagen.src = "/img/generic.png";
     }
 }
 
@@ -90,7 +90,7 @@ function habilitarEdicion() {
  * A REALIZAR
  */
 function cancelarEdicion() {
-    renderPerfil(); // Restaura los valores originales
+    renderPerfil();
     camposEditables.forEach(input => input.disabled = true);
     btnGuardar.disabled = true;
     btnCancelar.classList.add('d-none');
@@ -107,7 +107,7 @@ function guardarPerfil(e) {
     const profesionales = JSON.parse(localStorage.getItem(PROFESIONALES_KEY) || '[]');
     const idx = profesionales.findIndex(p => p.matricula === profesional.matricula);
     if (idx === -1) {
-        alert('Error: No se pudo encontrar al profesional en la base de datos.');
+        alert('Error: No se pudo encontrar al profesional');
         return;
     }
     const profesionalActualizado = {
@@ -118,7 +118,7 @@ function guardarPerfil(e) {
     };
     profesionales[idx] = profesionalActualizado;
     localStorage.setItem(PROFESIONALES_KEY, JSON.stringify(profesionales));
-    localStorage.setItem('profesionalActivo', JSON.stringify(profesionalActualizado)); // ¡Importante!
+    localStorage.setItem('profesionalActivo', JSON.stringify(profesionalActualizado));
     alert('Perfil actualizado correctamente.');
     cancelarEdicion();
 }
